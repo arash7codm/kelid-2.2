@@ -1,0 +1,246 @@
+@import "tailwindcss";
+
+@layer base {
+  *, ::before, ::after {
+    font-family: 'Vazirmatn', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  }
+  
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h, 72px);
+    scroll-padding-bottom: var(--nav-h, 88px);
+  }
+
+  html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #070d1a;
+    color: #dae2ff;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    overscroll-behavior-y: none;
+    min-height: 100dvh;
+  }
+
+  :root {
+    --header-h: calc(4rem + env(safe-area-inset-top, 0px));
+    --nav-h: calc(5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+  .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+  
+  ::-webkit-scrollbar { display: none; }
+  * { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+/* Animations for Luxury Loop & Particles */
+@keyframes floatParticles {
+  0% { transform: translateY(0px) scale(0.9) rotate(0deg); opacity: 0.25; }
+  50% { transform: translateY(-70px) scale(1.15) rotate(180deg); opacity: 0.7; }
+  100% { transform: translateY(-140px) scale(0.9) rotate(360deg); opacity: 0.2; }
+}
+
+@keyframes floatParticlesAlt {
+  0% { transform: translateY(0px) scale(1) rotate(0deg); opacity: 0.3; }
+  50% { transform: translateY(-90px) scale(1.25) rotate(-180deg); opacity: 0.8; }
+  100% { transform: translateY(-180px) scale(1) rotate(-360deg); opacity: 0.25; }
+}
+
+@keyframes luxuryPulseGlow {
+  0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.35; }
+  50% { transform: scale(1.18) translate(15px, -20px); opacity: 0.65; }
+}
+
+@keyframes luxuryPulseGlow2 {
+  0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.25; }
+  50% { transform: scale(1.22) translate(-20px, 25px); opacity: 0.55; }
+}
+
+@keyframes keyFloatWatermark {
+  0% { transform: translateY(30px) scale(0.96) rotate(-2deg); opacity: 0.04; }
+  50% { transform: translateY(-20px) scale(1.04) rotate(2deg); opacity: 0.08; }
+  100% { transform: translateY(30px) scale(0.96) rotate(-2deg); opacity: 0.04; }
+}
+
+@keyframes luminousMistSweep {
+  0% { transform: translateX(220%) translateY(-20%) rotate(30deg); opacity: 0; }
+  20% { opacity: 0.65; }
+  45%, 100% { transform: translateX(-220%) translateY(20%) rotate(30deg); opacity: 0; }
+}
+
+@keyframes periodicSheenSweep {
+  0%, 70% { transform: translateX(200%) rotate(25deg); opacity: 0; }
+  80% { opacity: 0.6; }
+  95%, 100% { transform: translateX(-200%) rotate(25deg); opacity: 0; }
+}
+
+@keyframes glowBreathingDot {
+  0%, 100% { box-shadow: 0 0 6px rgba(52, 211, 153, 0.7), 0 0 12px rgba(52, 211, 153, 0.35); transform: scale(1); }
+  50% { box-shadow: 0 0 16px rgba(52, 211, 153, 1), 0 0 28px rgba(52, 211, 153, 0.7); transform: scale(1.22); }
+}
+
+@keyframes glowUrgentPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(239, 68, 68, 0.5), inset 0 0 6px rgba(239, 68, 68, 0.3); transform: scale(1); }
+  50% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.9), inset 0 0 10px rgba(239, 68, 68, 0.6); transform: scale(1.05); }
+}
+
+@keyframes goldenHaloPulse {
+  0%, 100% { transform: scale(1); opacity: 0.45; }
+  50% { transform: scale(1.18); opacity: 0.85; filter: drop-shadow(0 0 16px rgba(241, 203, 131, 0.7)); }
+}
+
+@keyframes ringRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.anim-particles-1 { animation: floatParticles 14s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+.anim-particles-2 { animation: floatParticlesAlt 18s cubic-bezier(0.4, 0, 0.2, 1) infinite reverse; }
+.anim-glow-1 { animation: luxuryPulseGlow 10s ease-in-out infinite; }
+.anim-glow-2 { animation: luxuryPulseGlow2 12s ease-in-out infinite 2s; }
+.anim-watermark { animation: keyFloatWatermark 18s ease-in-out infinite; }
+.golden-halo-pulse { animation: goldenHaloPulse 3.2s ease-in-out infinite; }
+.golden-ring-spin { animation: ringRotate 20s linear infinite; }
+.live-dot-pulse { animation: glowBreathingDot 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+.live-urgent-pulse { animation: glowUrgentPulse 1.8s ease-in-out infinite; }
+
+.fade-in-1 { animation: fadeInUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.05s both; }
+.fade-in-2 { animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both; }
+.fade-in-3 { animation: fadeInUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.18s both; }
+.fade-in-4 { animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both; }
+.fade-in-5 { animation: fadeInUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.30s both; }
+
+/* Stitch Glass Panels System */
+.glass-panel {
+  position: relative;
+  background: rgba(10, 19, 40, 0.55);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(241, 203, 131, 0.22);
+  box-shadow: 0 10px 35px -5px rgba(0, 0, 0, 0.55), inset 0 1px 1px 0 rgba(255, 255, 255, 0.20), inset 0 -1px 1px 0 rgba(241, 203, 131, 0.08);
+  border-radius: 1.25rem;
+}
+
+.glass-panel-subtle {
+  background: rgba(8, 14, 28, 0.48);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(241, 203, 131, 0.14);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  border-radius: 0.875rem;
+}
+
+.glass-field {
+  background: rgba(8, 14, 28, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(241, 203, 131, 0.22);
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.45);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-field:focus-within, .glass-field:focus {
+  border-color: rgba(241, 203, 131, 0.65);
+  box-shadow: 0 0 16px rgba(241, 203, 131, 0.25), inset 0 2px 4px 0 rgba(0, 0, 0, 0.45);
+  outline: none;
+}
+
+/* Global Placeholder Behavior: faint light gray (~38% of muted text), disappears immediately on focus */
+input::placeholder,
+textarea::placeholder {
+  color: rgba(184, 197, 245, 0.38) !important;
+  font-weight: 400 !important;
+  opacity: 1 !important;
+  transition: opacity 0.12s ease;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  opacity: 0 !important;
+  color: transparent !important;
+}
+
+/* Luminous Mist Layer */
+.card-mist-layer {
+  position: absolute;
+  inset: -50%;
+  background: linear-gradient(115deg, transparent 35%, rgba(255, 255, 255, 0.28) 48%, rgba(241, 203, 131, 0.35) 52%, transparent 65%);
+  filter: blur(8px);
+  pointer-events: none;
+  animation: luminousMistSweep 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: 10;
+}
+
+/* Primary Gold Button Periodic Sheen */
+.gold-cta-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-cta-sheen::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: linear-gradient(115deg, transparent 40%, rgba(255, 255, 255, 0.4) 50%, transparent 60%);
+  pointer-events: none;
+  animation: periodicSheenSweep 3.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes waveEqualize {
+  0%, 100% { transform: scaleY(0.28); opacity: 0.72; }
+  45% { transform: scaleY(1); opacity: 1; }
+  75% { transform: scaleY(0.55); opacity: 0.88; }
+}
+
+@keyframes micRippleRing {
+  0% { transform: scale(0.92); opacity: 0.75; }
+  70% { transform: scale(1.42); opacity: 0; }
+  100% { transform: scale(1.48); opacity: 0; }
+}
+
+.wave-bar-live {
+  transform-origin: center;
+  animation: waveEqualize 0.85s ease-in-out infinite;
+}
+
+.mic-ring-pulse-1 {
+  animation: micRippleRing 1.9s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+.mic-ring-pulse-2 {
+  animation: micRippleRing 1.9s cubic-bezier(0.16, 1, 0.3, 1) 0.65s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-particles-1, .anim-particles-2, .anim-glow-1, .anim-glow-2, 
+  .anim-watermark, .card-mist-layer, .gold-cta-sheen::after,
+  .wave-bar-live, .mic-ring-pulse-1, .mic-ring-pulse-2 {
+    animation: none !important;
+  }
+}
+

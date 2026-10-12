@@ -1,0 +1,9 @@
+{
+  "name": "Remix Kelid-2",
+  "description": "Imported from GitHub: arash7codm/Kelid-2",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ],
+  "majorCapabilities": []
+}

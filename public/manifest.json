@@ -1,0 +1,67 @@
+{
+  "id": "/",
+  "name": "کلید - سامانه جامع املاک و سرمایه‌گذاری",
+  "short_name": "کلید",
+  "description": "سامانه مدیریت املاک و سرمایه‌گذاری شمال کشور، تطبیق هوشمند، یادآور صوتی هوش مصنوعی و بایگانی امن ابری.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#040c19",
+  "theme_color": "#040c19",
+  "lang": "fa",
+  "dir": "rtl",
+  "categories": ["business", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "ثبت ملک جدید",
+      "short_name": "ملک جدید",
+      "description": "ثبت سریع مشخصات و متراژ ملک جدید",
+      "url": "/#action=new-property",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "ثبت متقاضی جدید",
+      "short_name": "متقاضی جدید",
+      "description": "ثبت درخواست خرید یا سرمایه‌گذاری و اتصال هوشمند",
+      "url": "/#action=new-applicant",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "یادآور صوتی هوشمند",
+      "short_name": "یادآور صوتی",
+      "description": "تبدیل صوت به یادداشت و استخراج وظیفه با AI",
+      "url": "/#action=voice-reminder",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "share_target": {
+    "action": "/#action=share-target",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
